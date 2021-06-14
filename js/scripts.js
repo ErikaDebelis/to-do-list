@@ -21,12 +21,13 @@ ToDoList.prototype.assignId = function() {
   return this.currentId;
 }
 
-// ToDoList.prototype.deleteChore = function(id) {
-//   if (this.chores[id] === false) {
-//     return false;
-//   }
-//   return true;
-// }
+ToDoList.prototype.deleteChore = function(id) {
+  //if (this.chores[id] === false) {
+     //return false;
+   //}
+   delete this.chores[id]
+   //return true;
+ }
 
 /*
 let laundry = new Chore("laundry");
@@ -44,15 +45,24 @@ $(document).ready(function() {
 
 
     let newTask = $("#noteInput").val();
-    let chore = new Chore(newTask)
-    list.addChore(chore)
+    let chores = new Chore(newTask)
+    list.addChore(chores)
     console.log(list)
     
-    $("#choreList").prepend("<li>" + newTask + "</li>");
+    $("#choreList").append("<li>" + newTask + "</li>");
 
 
     
   }); 
+
+
+  $("form#formTwo").click(function(event) {
+  event.preventDefault();
+  let id = $("#delete").val();
+  list.deleteChore(id)
+
+
+  });
 });
 
 
