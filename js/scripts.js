@@ -28,7 +28,6 @@ ToDoList.prototype.assignId = function() {
 //   return true;
 // }
 
-
 /*
 let laundry = new Chore("laundry");
 let groceries = new Chore("groceries");
